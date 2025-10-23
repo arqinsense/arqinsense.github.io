@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ARQIN SENSE — Anti-Stress Sphere</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ARQIN SENSE — premium anti-stress sphere for kids (3+) and offices. Safe, tactile, sensory focus.">
+  <meta property="og:title" content="ARQIN SENSE — Anti-Stress Sphere">
+  <meta property="og:description" content="Premium anti-stress sphere for kids (3+) and offices.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/cover.jpg">
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/images/favicon.png">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="ARQIN SENSE">
+      <!-- Лого-иконка в виде шарика -->
+      <span class="logo-dot" aria-hidden="true"></span>
+      <span class="brand-text">ARQIN <strong>SENSE</strong></span>
+    </a>
+    <!-- Единственная ссылка на Telegram -->
+    <a class="tg" href="https://t.me/your_channel_here" target="_blank" rel="noopener">Telegram</a>
+  </div>
+</header>
+
+<main id="home">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <h1>Calm. Focus. Play.</h1>
+      <p class="lead">
+        Premium anti-stress sphere for <b>kids 3+</b> and <b>offices</b> — safe tactile motion, soft sound & pleasant aroma options.
+      </p>
+      <div class="cta-row">
+        <a class="btn primary" href="#features">Explore</a>
+        <a class="btn ghost" href="#gallery">Gallery</a>
+      </div>
+      <div class="hero-img">
+        <!-- Замени изображение на своё -->
+        <img src="assets/images/hero.png" alt="ARQIN SENSE sphere">
+      </div>
+    </div>
+    <div class="wave" aria-hidden="true"></div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="features">
+    <div class="wrap">
+      <h2>Why ARQIN SENSE?</h2>
+      <div class="grid3">
+        <article>
+          <h3>Safe by design</h3>
+          <p>No electronics inside. Only tactile motion, soft sound modules and optional aroma capsules.</p>
+        </article>
+        <article>
+          <h3>3+ Friendly</h3>
+          <p>Rounded form, durable materials, smooth edges. For kids, schools, therapy rooms.</p>
+        </article>
+        <article>
+          <h3>Office Focus</h3>
+          <p>Relieves stress during calls and deep work. Silent mode options for shared spaces.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLOR GALLERY -->
+  <section id="gallery" class="gallery">
+    <div class="wrap">
+      <h2>Sea Breeze Palette</h2>
+      <p class="note">Tap a color to preview.</p>
+      <div class="swatches" id="swatches">
+        <!-- Цвета морской гаммы -->
+        <button data-variant="Aqua" style="--c:#66d1d1" aria-label="Aqua"></button>
+        <button data-variant="Seafoam" style="--c:#7fe0c8" aria-label="Seafoam"></button>
+        <button data-variant="Sky" style="--c:#8fd3ff" aria-label="Sky"></button>
+        <button data-variant="Mist" style="--c:#cceaf1" aria-label="Mist"></button>
+        <button data-variant="Deep" style="--c:#0a516d" aria-label="Deep"></button>
+      </div>
+
+      <div class="product-card">
+        <img id="productImage" src="assets/images/sphere-aqua.png" alt="ARQIN SENSE sphere color preview">
+        <div class="product-info">
+          <h3 id="variantName">Aqua</h3>
+          <ul class="bullets">
+            <li>Soft-touch shell • 90 mm</li>
+            <li>Motion beads + soft rattle</li>
+            <li>Aroma capsule bay (optional)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="video-block">
+        <!-- Вставь своё видео с демонстрацией -->
+        <video controls playsinline poster="assets/images/video-cover.jpg">
+          <source src="assets/video/demo.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="usecases">
+    <div class="wrap">
+      <h2>Designed for</h2>
+      <div class="grid3">
+        <article>
+          <h3>Kids (3+)</h3>
+          <p>Develops fine motor skills and calms emotions with predictable motion.</p>
+        </article>
+        <article>
+          <h3>Parents & Teachers</h3>
+          <p>Helps during learning and bedtime routines without screens.</p>
+        </article>
+        <article>
+          <h3>Teams & Offices</h3>
+          <p>Micro-break companion for focus and stress relief at desks or meetings.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p>Questions, wholesale, or collabs — message us on Telegram.</p>
+      <a class="btn primary" href="https://t.me/your_channel_here" target="_blank" rel="noopener">Open Telegram</a>
+      <p class="small">*One link only — to keep it clean.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© <span id="y"></span> ARQIN SENSE • All rights reserved</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
