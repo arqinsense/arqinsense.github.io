@@ -1,116 +1,256 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>ARQIN SENSE — Anti-Stress Sphere</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#071a21" />
+  <meta name="description" content="ARQIN SENSE — premium anti-stress sphere for kids (3+) and offices. Safe tactile motion, soft sound, optional aroma." />
+
   <style>
-    /* --- CSS ВНУТРИ ОДНОГО ФАЙЛА --- */
     :root{
       --bg:#071a21;
-      --bg-2:#0b2933;
       --text:#e9fcff;
       --muted:#a9cbd1;
-      --primary:#67d4d0;
-      --primary-2:#8fd3ff;
-      --glass: rgba(255,255,255,.06);
-      --radius:14px;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --primary:#67d4d0;        /* aqua */
+      --primary-2:#8fd3ff;      /* sky */
+      --deep:#0a516d;           /* deep sea */
+      --glass:rgba(255,255,255,.06);
+      --radius:16px;
+      --shadow:0 12px 32px rgba(0,0,0,.35);
     }
     *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0;
-      font:16px/1.5 system-ui;
       color:var(--text);
-      background:linear-gradient(#06161b,#051015);
+      font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+      background:
+        radial-gradient(1200px 600px at 70% -10%, #0f3c49 0%, transparent 60%),
+        linear-gradient(180deg, #06161b 0%, #051015 100%);
     }
-    .wrap{width:min(1100px,92%);margin:auto}
-    header{
-      position:sticky;top:0;background:rgba(5,20,26,0.8);
-      backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.05);
-      z-index:100;
+    .wrap{width:min(1100px,92%);margin:0 auto}
+
+    /* Topbar */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(140%) blur(10px);
+      background:linear-gradient(180deg, rgba(4,18,24,.95), rgba(4,18,24,.6));
+      border-bottom:1px solid rgba(255,255,255,.08);
     }
-    header .wrap{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
-    .brand{color:white;text-decoration:none;font-weight:600;font-size:18px;display:flex;align-items:center;gap:8px}
-    .tg{color:white;text-decoration:none;background:var(--glass);padding:8px 14px;border-radius:10px}
-    section{padding:50px 0}
-    h1{font-size:clamp(28px,6vw,48px);margin:0}
-    h2{font-size:clamp(22px,4vw,32px);margin:0 0 20px}
-    .hero p{color:var(--muted);max-width:600px}
+    .topbar .row{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;gap:10px;align-items:center;text-decoration:none;color:var(--text);font-weight:700}
+    .brand img{height:22px;width:22px;object-fit:contain;border-radius:6px;background:#0b2a33}
+    .brand span b{color:var(--primary)}
+    .tg{color:var(--text);text-decoration:none;padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.1);background:var(--glass)}
+    .tg:active{transform:scale(.98)}
+
+    /* Sections */
+    section{padding:54px 0}
+    h1{font-size:clamp(28px,5.5vw,54px);margin:4px 0 8px}
+    h2{font-size:clamp(22px,4vw,36px);margin:0 0 12px}
+    .lead{color:var(--muted);max-width:680px}
     .btn{
-      display:inline-block;padding:12px 20px;border-radius:12px;text-decoration:none;font-weight:600;margin-right:10px;
-      color:#002024;background:linear-gradient(90deg,var(--primary),var(--primary-2))
+      display:inline-block;padding:12px 18px;border-radius:12px;
+      font-weight:700;text-decoration:none;border:1px solid transparent
     }
-    .gallery .colors{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
-    .gallery .colors button{
-      width:40px;height:40px;border:none;border-radius:50%;
-      box-shadow:0 0 0 2px rgba(255,255,255,.2) inset;cursor:pointer;
+    .btn.primary{background:linear-gradient(90deg,var(--primary),var(--primary-2));color:#002024}
+    .btn.ghost{background:var(--glass);color:var(--text);border-color:rgba(255,255,255,.14)}
+
+    /* Hero */
+    .hero{padding-top:36px}
+    .hero .grid{display:grid;gap:18px;grid-template-columns:1fr}
+    .hero .media{
+      border-radius:var(--radius);overflow:hidden;background:#0b2a33;box-shadow:var(--shadow);
+      min-height:200px;display:grid;place-items:center
     }
-    .product{
-      margin-top:20px;padding:20px;background:var(--glass);border-radius:var(--radius);
-      display:flex;flex-direction:column;align-items:center;text-align:center;
+    .hero .media img{width:100%;height:100%;object-fit:cover}
+    @media(min-width:860px){ .hero .grid{grid-template-columns:1.1fr 1fr} }
+
+    /* Features */
+    .grid3{display:grid;gap:14px;grid-template-columns:1fr}
+    @media(min-width:720px){ .grid3{grid-template-columns:repeat(3,1fr)} }
+    .card{padding:16px;border-radius:14px;background:var(--glass);border:1px solid rgba(255,255,255,.08)}
+
+    /* Gallery */
+    .swatches{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 16px}
+    .swatches button{
+      width:42px;height:42px;border-radius:50%;border:none;cursor:pointer;
+      box-shadow:0 0 0 2px rgba(255,255,255,.15) inset, 0 5px 12px rgba(0,0,0,.28);
     }
-    .product img{width:200px;height:200px;object-fit:contain;background:#0b2933;border-radius:10px;margin-bottom:10px}
-    footer{text-align:center;color:var(--muted);padding:20px 0;border-top:1px solid rgba(255,255,255,.1)}
+    .product{display:grid;gap:16px;grid-template-columns:1fr;align-items:center;
+      border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:14px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02))}
+    @media(min-width:760px){ .product{grid-template-columns:380px 1fr} }
+    .product img{width:100%;border-radius:12px;background:#0b2a33;box-shadow:var(--shadow)}
+    .bullets{margin:10px 0 0; padding-left:18px; color:var(--muted)}
+
+    /* Video */
+    .video{margin-top:16px}
+    video{width:100%;border-radius:12px;background:black;box-shadow:var(--shadow)}
+
+    /* Contact */
+    .contact .note{color:var(--muted);margin-top:10px}
+
+    /* Footer */
+    footer{border-top:1px solid rgba(255,255,255,.08);background:#06161b}
+    footer .wrap{padding:22px 0}
+    footer p{margin:0;color:var(--muted)}
   </style>
 </head>
 <body>
-
-<header>
-  <div class="wrap">
-    <a class="brand" href="#home">ARQIN <strong>SENSE</strong></a>
-    <a class="tg" href="https://t.me/your_telegram" target="_blank">Telegram</a>
-  </div>
-</header>
-
-<section class="hero" id="home">
-  <div class="wrap">
-    <h1>Calm. Focus. Play.</h1>
-    <p>Premium anti-stress sphere for kids (3+) and offices — tactile motion, soft sound, no electronics inside.</p>
-    <a href="#gallery" class="btn">Explore</a>
-  </div>
-</section>
-
-<section id="gallery" class="gallery">
-  <div class="wrap">
-    <h2>Choose Color</h2>
-    <div class="colors">
-      <button style="background:#66d1d1" data-color="Aqua"></button>
-      <button style="background:#7fe0c8" data-color="Seafoam"></button>
-      <button style="background:#8fd3ff" data-color="Sky"></button>
-      <button style="background:#cceaf1" data-color="Mist"></button>
-      <button style="background:#0a516d" data-color="Deep"></button>
+  <!-- ===== TOPBAR ===== -->
+  <header class="topbar">
+    <div class="wrap row">
+      <a class="brand" href="#home" aria-label="ARQIN SENSE">
+        <!-- ===== ЗАМЕНИ ЛОГО (PNG/SVG) ===== -->
+        <img src="assets/images/logo.png" alt="ARQIN logo" onerror="this.style.display='none'">
+        <span>ARQIN <b>SENSE</b></span>
+      </a>
+      <a class="tg" href="https://t.me/arqinsense" target="_blank" rel="noopener">Telegram</a>
     </div>
+  </header>
 
-    <div class="product">
-      <img id="ballImg" src="https://via.placeholder.com/200" alt="Sphere">
-      <h3 id="colorName">Aqua</h3>
-      <p style="color:var(--muted)">Soft-touch, aroma-ready, safe for kids</p>
+  <main id="home">
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="grid">
+          <div>
+            <h1>Calm. Focus. Play.</h1>
+            <p class="lead">Premium anti-stress sphere for <b>kids 3+</b> and <b>offices</b> — safe tactile motion, soft sound & optional aroma. No electronics inside.</p>
+            <div style="display:flex;gap:12px;margin:18px 0 6px">
+              <a class="btn primary" href="#gallery">Explore</a>
+              <a class="btn ghost" href="#contact">Contact</a>
+            </div>
+          </div>
+          <div class="media">
+            <!-- ===== ЗАМЕНИ БАННЕР (JPG/PNG) ===== -->
+            <img src="assets/images/hero.jpg" alt="ARQIN SENSE banner" onerror="this.remove();this.parentElement.style.background='radial-gradient(120px 80px at 25% 20%, rgba(103,212,208,.35), transparent 70%), radial-gradient(120px 80px at 75% 70%, rgba(143,211,255,.25), transparent 70%)'">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="features">
+      <div class="wrap">
+        <h2>Why ARQIN SENSE?</h2>
+        <div class="grid3">
+          <article class="card">
+            <h3>Safe by design</h3>
+            <p>No electronics inside. Only tactile motion, soft sound modules and optional aroma capsules.</p>
+          </article>
+          <article class="card">
+            <h3>3+ Friendly</h3>
+            <p>Rounded form, durable materials, smooth edges. For kids, schools, therapy rooms.</p>
+          </article>
+          <article class="card">
+            <h3>Office Focus</h3>
+            <p>Relieves stress during calls and deep work. Silent mode options for shared spaces.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALLERY / COLORS ===== -->
+    <section id="gallery" class="gallery">
+      <div class="wrap">
+        <h2>Sea Breeze Palette</h2>
+        <p class="lead">Tap a color to preview.</p>
+
+        <div class="swatches" id="swatches">
+          <button data-variant="Aqua"    style="background:#66d1d1"></button>
+          <button data-variant="Seafoam" style="background:#7fe0c8"></button>
+          <button data-variant="Sky"     style="background:#8fd3ff"></button>
+          <button data-variant="Mist"    style="background:#cceaf1"></button>
+          <button data-variant="Deep"    style="background:#0a516d"></button>
+        </div>
+
+        <div class="product">
+          <!-- ===== ЗАМЕНИ ФОТО СФЕР ПО ИМЕНАМ ФАЙЛОВ НИЖЕ ===== -->
+          <img id="productImage" src="assets/images/sphere-aqua.png" alt="ARQIN SENSE sphere preview"
+               onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22720%22 height=%24540%22><rect width=%22100%25%22 height=%22100%25%22 fill=%230b2a33/><circle cx=%22360%22 cy=%27270%27 r=%27160%27 fill=%2367d4d0%22/></svg>'">
+          <div>
+            <h3 id="variantName">Aqua</h3>
+            <ul class="bullets">
+              <li>Soft-touch shell • 90 mm</li>
+              <li>Motion beads + soft rattle</li>
+              <li>Aroma capsule bay (optional)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="video">
+          <!-- ===== ЗАМЕНИ ВИДЕО (MP4) И ПОСТЕР ===== -->
+          <video controls playsinline poster="assets/images/video-cover.jpg">
+            <source src="assets/video/demo.mp4" type="video/mp4"/>
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== USE CASES ===== -->
+    <section class="usecases">
+      <div class="wrap">
+        <h2>Designed for</h2>
+        <div class="grid3">
+          <article class="card">
+            <h3>Kids (3+)</h3>
+            <p>Develops fine motor skills and calms emotions with predictable motion.</p>
+          </article>
+          <article class="card">
+            <h3>Parents & Teachers</h3>
+            <p>Helps during learning and bedtime routines without screens.</p>
+          </article>
+          <article class="card">
+            <h3>Teams & Offices</h3>
+            <p>Micro-break companion for focus and stress relief at desks or meetings.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <p>Questions, wholesale, or collabs — message us on Telegram.</p>
+        <a class="btn primary" href="https://t.me/arqinsense" target="_blank" rel="noopener">Open Telegram</a>
+        <p class="note">*One link only — to keep it clean.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span id="y"></span> ARQIN SENSE • All rights reserved</p>
     </div>
-  </div>
-</section>
+  </footer>
 
-<footer>
-  © <span id="year"></span> ARQIN SENSE — All rights reserved
-</footer>
+  <script>
+    // Год в футере
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-<script>
-  // --- JS ВНУТРИ ОДНОГО ФАЙЛА ---
-  document.getElementById('year').textContent = new Date().getFullYear();
+    // Смена цвета/картинки
+    const map = {
+      "Aqua":"sphere-aqua.png",
+      "Seafoam":"sphere-seafoam.png",
+      "Sky":"sphere-sky.png",
+      "Mist":"sphere-mist.png",
+      "Deep":"sphere-deep.png"
+    };
+    const sw = document.getElementById('swatches');
+    const img = document.getElementById('productImage');
+    const nameEl = document.getElementById('variantName');
 
-  const buttons = document.querySelectorAll('.colors button');
-  const img = document.getElementById('ballImg');
-  const nameEl = document.getElementById('colorName');
-
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      let color = btn.getAttribute('data-color');
-      nameEl.textContent = color;
-      // Здесь можно поставить реальные картинки:
-      img.src = "https://via.placeholder.com/200?text=" + color;
+    sw.addEventListener('click', (e)=>{
+      const btn = e.target.closest('button[data-variant]');
+      if(!btn) return;
+      const v = btn.dataset.variant;
+      nameEl.textContent = v;
+      img.src = 'assets/images/' + (map[v] || map['Aqua']);
     });
-  });
-</script>
-
+  </script>
 </body>
 </html>
