@@ -4,142 +4,113 @@
   <meta charset="utf-8">
   <title>ARQIN SENSE — Anti-Stress Sphere</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="ARQIN SENSE — premium anti-stress sphere for kids (3+) and offices. Safe, tactile, sensory focus.">
-  <meta property="og:title" content="ARQIN SENSE — Anti-Stress Sphere">
-  <meta property="og:description" content="Premium anti-stress sphere for kids (3+) and offices.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/images/cover.jpg">
-  <link rel="preload" href="styles.css" as="style">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="assets/images/favicon.png">
+  <style>
+    /* --- CSS ВНУТРИ ОДНОГО ФАЙЛА --- */
+    :root{
+      --bg:#071a21;
+      --bg-2:#0b2933;
+      --text:#e9fcff;
+      --muted:#a9cbd1;
+      --primary:#67d4d0;
+      --primary-2:#8fd3ff;
+      --glass: rgba(255,255,255,.06);
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font:16px/1.5 system-ui;
+      color:var(--text);
+      background:linear-gradient(#06161b,#051015);
+    }
+    .wrap{width:min(1100px,92%);margin:auto}
+    header{
+      position:sticky;top:0;background:rgba(5,20,26,0.8);
+      backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.05);
+      z-index:100;
+    }
+    header .wrap{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+    .brand{color:white;text-decoration:none;font-weight:600;font-size:18px;display:flex;align-items:center;gap:8px}
+    .tg{color:white;text-decoration:none;background:var(--glass);padding:8px 14px;border-radius:10px}
+    section{padding:50px 0}
+    h1{font-size:clamp(28px,6vw,48px);margin:0}
+    h2{font-size:clamp(22px,4vw,32px);margin:0 0 20px}
+    .hero p{color:var(--muted);max-width:600px}
+    .btn{
+      display:inline-block;padding:12px 20px;border-radius:12px;text-decoration:none;font-weight:600;margin-right:10px;
+      color:#002024;background:linear-gradient(90deg,var(--primary),var(--primary-2))
+    }
+    .gallery .colors{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+    .gallery .colors button{
+      width:40px;height:40px;border:none;border-radius:50%;
+      box-shadow:0 0 0 2px rgba(255,255,255,.2) inset;cursor:pointer;
+    }
+    .product{
+      margin-top:20px;padding:20px;background:var(--glass);border-radius:var(--radius);
+      display:flex;flex-direction:column;align-items:center;text-align:center;
+    }
+    .product img{width:200px;height:200px;object-fit:contain;background:#0b2933;border-radius:10px;margin-bottom:10px}
+    footer{text-align:center;color:var(--muted);padding:20px 0;border-top:1px solid rgba(255,255,255,.1)}
+  </style>
 </head>
 <body>
-<header class="topbar">
+
+<header>
   <div class="wrap">
-    <a class="brand" href="#home" aria-label="ARQIN SENSE">
-      <!-- Лого-иконка в виде шарика -->
-      <span class="logo-dot" aria-hidden="true"></span>
-      <span class="brand-text">ARQIN <strong>SENSE</strong></span>
-    </a>
-    <!-- Единственная ссылка на Telegram -->
-    <a class="tg" href="https://t.me/your_channel_here" target="_blank" rel="noopener">Telegram</a>
+    <a class="brand" href="#home">ARQIN <strong>SENSE</strong></a>
+    <a class="tg" href="https://t.me/your_telegram" target="_blank">Telegram</a>
   </div>
 </header>
 
-<main id="home">
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap">
-      <h1>Calm. Focus. Play.</h1>
-      <p class="lead">
-        Premium anti-stress sphere for <b>kids 3+</b> and <b>offices</b> — safe tactile motion, soft sound & pleasant aroma options.
-      </p>
-      <div class="cta-row">
-        <a class="btn primary" href="#features">Explore</a>
-        <a class="btn ghost" href="#gallery">Gallery</a>
-      </div>
-      <div class="hero-img">
-        <!-- Замени изображение на своё -->
-        <img src="assets/images/hero.png" alt="ARQIN SENSE sphere">
-      </div>
-    </div>
-    <div class="wave" aria-hidden="true"></div>
-  </section>
-
-  <!-- FEATURES -->
-  <section id="features" class="features">
-    <div class="wrap">
-      <h2>Why ARQIN SENSE?</h2>
-      <div class="grid3">
-        <article>
-          <h3>Safe by design</h3>
-          <p>No electronics inside. Only tactile motion, soft sound modules and optional aroma capsules.</p>
-        </article>
-        <article>
-          <h3>3+ Friendly</h3>
-          <p>Rounded form, durable materials, smooth edges. For kids, schools, therapy rooms.</p>
-        </article>
-        <article>
-          <h3>Office Focus</h3>
-          <p>Relieves stress during calls and deep work. Silent mode options for shared spaces.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- COLOR GALLERY -->
-  <section id="gallery" class="gallery">
-    <div class="wrap">
-      <h2>Sea Breeze Palette</h2>
-      <p class="note">Tap a color to preview.</p>
-      <div class="swatches" id="swatches">
-        <!-- Цвета морской гаммы -->
-        <button data-variant="Aqua" style="--c:#66d1d1" aria-label="Aqua"></button>
-        <button data-variant="Seafoam" style="--c:#7fe0c8" aria-label="Seafoam"></button>
-        <button data-variant="Sky" style="--c:#8fd3ff" aria-label="Sky"></button>
-        <button data-variant="Mist" style="--c:#cceaf1" aria-label="Mist"></button>
-        <button data-variant="Deep" style="--c:#0a516d" aria-label="Deep"></button>
-      </div>
-
-      <div class="product-card">
-        <img id="productImage" src="assets/images/sphere-aqua.png" alt="ARQIN SENSE sphere color preview">
-        <div class="product-info">
-          <h3 id="variantName">Aqua</h3>
-          <ul class="bullets">
-            <li>Soft-touch shell • 90 mm</li>
-            <li>Motion beads + soft rattle</li>
-            <li>Aroma capsule bay (optional)</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="video-block">
-        <!-- Вставь своё видео с демонстрацией -->
-        <video controls playsinline poster="assets/images/video-cover.jpg">
-          <source src="assets/video/demo.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
-  </section>
-
-  <!-- USE CASES -->
-  <section class="usecases">
-    <div class="wrap">
-      <h2>Designed for</h2>
-      <div class="grid3">
-        <article>
-          <h3>Kids (3+)</h3>
-          <p>Develops fine motor skills and calms emotions with predictable motion.</p>
-        </article>
-        <article>
-          <h3>Parents & Teachers</h3>
-          <p>Helps during learning and bedtime routines without screens.</p>
-        </article>
-        <article>
-          <h3>Teams & Offices</h3>
-          <p>Micro-break companion for focus and stress relief at desks or meetings.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <div class="wrap">
-      <h2>Contact</h2>
-      <p>Questions, wholesale, or collabs — message us on Telegram.</p>
-      <a class="btn primary" href="https://t.me/your_channel_here" target="_blank" rel="noopener">Open Telegram</a>
-      <p class="small">*One link only — to keep it clean.</p>
-    </div>
-  </section>
-</main>
-
-<footer class="foot">
+<section class="hero" id="home">
   <div class="wrap">
-    <p>© <span id="y"></span> ARQIN SENSE • All rights reserved</p>
+    <h1>Calm. Focus. Play.</h1>
+    <p>Premium anti-stress sphere for kids (3+) and offices — tactile motion, soft sound, no electronics inside.</p>
+    <a href="#gallery" class="btn">Explore</a>
   </div>
+</section>
+
+<section id="gallery" class="gallery">
+  <div class="wrap">
+    <h2>Choose Color</h2>
+    <div class="colors">
+      <button style="background:#66d1d1" data-color="Aqua"></button>
+      <button style="background:#7fe0c8" data-color="Seafoam"></button>
+      <button style="background:#8fd3ff" data-color="Sky"></button>
+      <button style="background:#cceaf1" data-color="Mist"></button>
+      <button style="background:#0a516d" data-color="Deep"></button>
+    </div>
+
+    <div class="product">
+      <img id="ballImg" src="https://via.placeholder.com/200" alt="Sphere">
+      <h3 id="colorName">Aqua</h3>
+      <p style="color:var(--muted)">Soft-touch, aroma-ready, safe for kids</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> ARQIN SENSE — All rights reserved
 </footer>
 
-<script src="script.js"></script>
+<script>
+  // --- JS ВНУТРИ ОДНОГО ФАЙЛА ---
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const buttons = document.querySelectorAll('.colors button');
+  const img = document.getElementById('ballImg');
+  const nameEl = document.getElementById('colorName');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      let color = btn.getAttribute('data-color');
+      nameEl.textContent = color;
+      // Здесь можно поставить реальные картинки:
+      img.src = "https://via.placeholder.com/200?text=" + color;
+    });
+  });
+</script>
+
 </body>
 </html>
